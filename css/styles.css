@@ -3,10 +3,13 @@
 html,
 body {
     padding: 0;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
     color: #fff;
     margin: 0;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -19,6 +22,31 @@ body {
 
 a {
     text-decoration: none;
+}
+
+video.fullscreen {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+--webkit-media-controls {
+    display: none !important;
+}
+
+.button-def {
+    hyphens: auto;
+    white-space: normal;
+    background: none;
+    color: inherit;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding: 12px 44px;
+    min-height: 48px;
 }
 
 .container {
@@ -169,7 +197,11 @@ a {
     z-index: 0;
     /*background-image: linear-gradient(#33e5dc, #f085e9);*/
     /*background-color: #000000;*/
-    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    /*background-image: linear-gradient(315deg, #000000 0%, #414141 74%);*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/todalindaa_com_br_moda_feminina_todalinda_store.webp);
 }
 
 .wrapper__pattern {
@@ -184,7 +216,15 @@ a {
 }
 
 /* Texture */
-.p2 {
+.texture {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -338,23 +378,44 @@ a {
 
 .wrapper__content .content__buttons {
     margin: 40px 0;
+    text-align: center;
 }
 
+
+.wrapper__content .content__buttons .StyledContainer {
+    backdrop-filter: blur(10px);
+    z-index: 0;
+    overflow: hidden;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+    color: rgb(255, 255, 255);
+    background-color: rgba(249, 196, 239, 0.5);
+    border-width: 0px;
+    margin-bottom: 16px;
+    border-radius: 24px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 4px 8px 0px;
+}
+
+.wrapper__content .content__buttons .StyledContainer:hover {
+    box-shadow: rgb(0 0 0 / 40%) 0px 8px 16px 0px;
+}
+
+
+
 .wrapper__content .content__buttons a {
-    width: 100%;
-    height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
+    justify-content: start;
     text-align: center;
     text-decoration: none;
-    border: 2px solid #fff;
-    margin: 15px 0;
-    border-radius: 8px;
-    transition: background .3s, color .3s, box-shadow .3s, transform .3s;
+    hyphens: auto;
+    white-space: normal;
+    background: none;
+    color: inherit;
+    transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s, background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    padding: 12px 44px;
+    min-height: 48px;
 }
 
 .wrapper__content .content__buttons a i {
@@ -363,14 +424,6 @@ a {
 
 .wrapper__content .content__buttons a p {
     margin: 0 0 0 10px;
-}
-
-.wrapper__content .content__buttons a:hover {
-    background: #fff;
-    color: #42b2bd;
-    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .1);
-    transform: scale(1.025);
-    transition: background .3s, color .3s, box-shadow .3s, transform .3s;
 }
 
 .wrapper__content .content__footer {
