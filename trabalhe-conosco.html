@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas de Emprego - Todalinda Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F8F8F8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #A50171;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-item {
+            border: 1px solid #A50171;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .job-item:hover {
+            background-color: #F3E5F5;
+        }
+
+        .job-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-top: 1px solid #A50171;
+            color: #333;
+        }
+
+        .apply {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #FFF1F3;
+            border: 1px solid #A50171;
+            border-radius: 8px;
+        }
+
+        .apply h2 {
+            color: #A50171;
+            font-weight: 500;
+        }
+
+        .apply p {
+            color: #555;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .job-item {
+                padding: 10px;
+            }
+
+            .job-details {
+                padding: 5px;
+            }
+
+            .apply {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trabalhe Conosco</h1>
+        <ul class="job-list">
+            <li class="job-item">
+                <h2>Vendedora</h2>
+                <div class="job-details">
+                    <p><strong>Local:</strong> Todalinda Store, R. Quinze de Novembro, 939 - São Francisco</p>
+                    <p><strong>Horário:</strong> Segunda a sexta das 09:00 às 18:00, Sábados das 09:00 às 14:00</p>
+                    <p><strong>Requisitos:</strong></p>
+                    <ul>
+                        <li>Boa comunicação</li>
+                        <li>Proatividade</li>
+                        <li>Organização de tarefas</li>
+                        <li>Habilidade para lidar com metas</li>
+                        <li>Comprometimento</li>
+                        <li>Trabalho em equipe</li>
+                    </ul>
+                    <p><strong>Benefícios:</strong> Vale-alimentação</p>
+                    <p><strong>Salário:</strong> Fixo + Comissão</p>
+                </div>
+            </li>
+        </ul>
+        <div class="apply">
+            <h2>Envie seu Currículo</h2>
+            <p>Para candidatar-se a uma vaga, envie seu currículo para <a href="mailto:contato@todalinda.store">contato@todalinda.store</a> ou deixe seu currículo diretamente na loja.</p>
+            <p><strong>Endereço:</strong> R. Quinze de Novembro, 939 - São Francisco</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const jobItems = document.querySelectorAll('.job-item');
+
+            jobItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const details = this.querySelector('.job-details');
+                    const isOpen = details.style.display === 'block';
+                    details.style.display = isOpen ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
